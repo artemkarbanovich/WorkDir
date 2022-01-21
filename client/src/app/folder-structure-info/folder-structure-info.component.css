@@ -1,0 +1,15 @@
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 19px;
+}
+
+.data-from__data, .path__data {
+    color: rgb(3, 184, 3);
+    font-weight: 500;
+}
+
+.content-path__container {
+    margin-bottom: 10px;
+}
