@@ -13,5 +13,4 @@ export class FolderStructureInfoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void { }
-
 }

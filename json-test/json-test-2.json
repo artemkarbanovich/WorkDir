@@ -1,0 +1,50 @@
+{
+  "name": "",
+  "childs": [
+    {
+      "name": "A",
+      "childs": [
+        {
+          "name": "A1"
+        },
+        {
+          "name": "A2",
+          "childs": [
+            {
+              "name": "A2-1"
+            },
+            {
+              "name": "A2-2"
+            },
+            {
+              "name": "A2-3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "B"
+    },
+    {
+      "name": "C"
+    },
+    {
+      "name": "D",
+      "childs": [
+        {
+          "name": "D1",
+          "childs": [
+            {
+              "name": "D1-1"
+            }
+          ]
+
+        },
+        {
+          "name": "D2"
+        }
+      ]
+    }
+  ]
+}

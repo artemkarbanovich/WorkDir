@@ -3,7 +3,6 @@ import { Folder } from '../interfaces/Folder';
 import { FolderService } from '../services/folder.service';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
-import { i18nMetaToJSDoc } from '@angular/compiler/src/render3/view/i18n/meta';
 
 @Component({
   selector: 'app-folder-structure',
@@ -15,7 +14,8 @@ export class FolderStructureComponent implements OnInit {
   private folders: Folder[] = [];
   treeControl = new NestedTreeControl<Folder>(node => node.childs);
   dataSource = new MatTreeNestedDataSource<Folder>();
-  selectedFullPath?: string = '-';
+  selectedFullPath: string = '-';
+  idPath: number = -1;
   dataFrom: string = 'API request';
 
   constructor(private folderService: FolderService) { }
@@ -41,6 +41,7 @@ export class FolderStructureComponent implements OnInit {
 
   getSubfolders(id: number, fullPath: string) {
     this.selectedFullPath = fullPath
+    this.idPath = id
     let selectedFolder: Folder | null = this.searchFolder(this.folders[0], id)
 
     if (selectedFolder === null) return
@@ -79,5 +80,11 @@ export class FolderStructureComponent implements OnInit {
   private updateSource() {
     this.dataSource.data = []
     this.dataSource.data = this.folders
+  }
+
+  public updateFoldersAfterCreate(event: any) {
+    let childsToDelete = this.searchFolder(this.folders[0], this.idPath)
+    childsToDelete!.childs = null
+    this.getSubfolders(this.idPath, this.selectedFullPath)
   }
 }

@@ -1,5 +1,6 @@
 ﻿using API.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace API.Controllers;
 
@@ -24,5 +25,27 @@ public class FoldersController : Controller
         }
 
         return Ok(folders);
+    }
+
+    [HttpPost]
+    public ActionResult CreateFoldersByJson(JsonRequest jsonRequest)
+    {
+        JsonFolders jsonFolders = JsonConvert.DeserializeObject<JsonFolders>(jsonRequest.JsonString);
+        CreateFoldersByPath(jsonFolders, jsonRequest.FullPath.Replace(@"\\", @"\"));
+        return Ok();
+    }
+
+    private void CreateFoldersByPath(JsonFolders node, string currentFullPath)
+    {
+        if (node.Name != "")
+        {
+            DirectoryInfo directoryInfo = new DirectoryInfo(currentFullPath + @"\" + node.Name);
+            if (!directoryInfo.Exists) 
+                directoryInfo.Create();
+        }
+
+        if (node.Childs.Count > 0)
+            foreach (var dir in node.Childs)
+                CreateFoldersByPath(dir, currentFullPath + @"\" + node.Name);
     }
 }

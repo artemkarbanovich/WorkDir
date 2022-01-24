@@ -1,0 +1,9 @@
+<div class="container">
+    <form (ngSubmit)="applySchema()">
+        <input #inputFile accept="application/json" id="file" type="file" class="file-input"
+            (change)="onFileSelected($event)">
+        <button type="submit" [disabled]="!selectedFile || (selectedFullPath == '-')">
+            Apply schema to the selected folder
+        </button>
+    </form>
+</div>

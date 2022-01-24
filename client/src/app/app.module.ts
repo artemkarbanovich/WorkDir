@@ -8,12 +8,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { FolderStructureInfoComponent } from './folder-structure-info/folder-structure-info.component';
+import { UploadJsonComponent } from './upload-json/upload-json.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     FolderStructureComponent,
-    FolderStructureInfoComponent
+    FolderStructureInfoComponent,
+    UploadJsonComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import { FolderStructureInfoComponent } from './folder-structure-info/folder-str
     MatTreeModule,
     MatIconModule,
     MatProgressBarModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

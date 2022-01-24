@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "XS7RaasILPEIFefYpMozaUhKhQe4DiYxYHkyuVozoKyevI4WTg/WZZSqeA6d0QsTZ8YAsYOgnOihIEHrisozrw==",
+  "dgSpecHash": "aLgh0JWcNxzvnRTN1aUEuFsoZCtiUND6vr8WzFwHGpXFiA4i/V707yOOdJzOxk0GB3GmNOiMRqknrRrYLTnYrQ==",
   "success": true,
   "projectFilePath": "D:\\Работа\\iTechArt\\Training\\Stage 2\\WorkDir\\API\\API\\API.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Артем\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
